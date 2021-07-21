@@ -31,22 +31,14 @@ const generatePDF = async (name) => {
   const fontBytes = await fetch("Sanchez-Regular.ttf").then((res) =>
   res.arrayBuffer()
 );
-  // Embed our custom font in the document ฝั่งฟ้อน ไป ในเทมเพลต 
+  // ฝั่งฟ้อน ไป ในเทมเพลต 
   const SanChezFont  = await pdfDoc.embedFont(fontBytes);
 
-   // Get the first page of the document ในหน้าแรก 
+   // 
    const pages = pdfDoc.getPages();
    const firstPage = pages[0];
  
-   // Draw a string of text diagonally across the first page
-  //  firstPage.drawText(name, {
-  //   x: 300, //แกนนอน
-  //   y: 270,  //แกนตั้ง
-  //   size: 20, //ขนาดฟ้อน
-  //   font: SanChezFont ,  // ฟ้อน
-  //   color: rgb(0.2, 0.84, 0.67),    // สี
-  // });
-
+ 
   
    firstPage.drawText(name, {
      x: 302,
